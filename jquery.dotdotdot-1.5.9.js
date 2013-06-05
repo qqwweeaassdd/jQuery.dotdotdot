@@ -158,8 +158,8 @@
 						.unbind_events()
 						.empty()
 						.append( orgContent )
-						.attr( 'style', $dot.data( 'dotdotdot-style' ) )
-						.data( 'dotdotdot', false );
+						.data( 'dotdotdot', false )
+						.attr( 'style', $dot.data( 'dotdotdot-style' ) );
 				}
 			);
 			return $dot;
@@ -574,9 +574,9 @@
 					return this.trigger( 'update', [ str ] );
 				}
 			}
-			return _orgHtml.call( this, str );
+			return _orgHtml.apply( this, arguments );
 		}
-		return _orgHtml.call( this );
+		return _orgHtml.apply( this, arguments );
     };
 
 
@@ -593,9 +593,9 @@
 				temp.remove();
 				return this.trigger( 'update', [ str ] );
 			}
-			return _orgText.call( this, str );
+			return _orgText.apply( this, arguments );
 		}
-        return _orgText.call( this );
+        return _orgText.apply( this, arguments );
     };
 
 
